@@ -7,9 +7,9 @@
  * http://opensource.org/licenses/MIT
  * 
  * Author: Adam J De Lucia
- * Version: 1.0.0
- * Date: May 24 2014
- *  
+ * Version: 1.1.0
+ * Date: November 16, 2014
+ * 
  */
 
 $.fn.popit = function (options) {
@@ -21,7 +21,8 @@ $.fn.popit = function (options) {
             url: $(this).attr("href"),
             name: $(this).attr("target"),
             dynamicWidth: $(this).data("width"),
-            dynamicHeight: $(this).data("height")
+            dynamicHeight: $(this).data("height"),
+            processHash: false
         }, options);
 
         var show = function (e) {
@@ -38,13 +39,14 @@ $.fn.popit = function (options) {
                 var popitWindow = window.open(settings.url, settings.name, "location=0, menubar=0, status=0, toolbar=0, width=" + settings.defaultWidth + ", height=" + settings.defaultHeight + '"', false)
             }
 
-            // Brings the new window to the front
+            // Brings named windows to the front if they are minimized or blurred
             popitWindow.focus();
 
             // Reloads window to process JS like location.hash for playlist index in named windows
-            var isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-            if (!isFirefox) popitWindow.location.reload();
-            if (isFirefox) popitWindow.history.go(0);
+            if (settings.processHash === true) {
+                popitWindow.location = settings.url;
+            }
+
             return popitWindow;
         };
 
