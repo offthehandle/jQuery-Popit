@@ -1,4 +1,4 @@
 jQuery-Popit
 ============
 
-Dynamic JS popup window creator built on the jQuery JS Library that grabs HTML attributes like "href," "target" and HTML5 width &amp; height data attributes to manage popup blocking.
+HTML attribute affordances used to mitigate JS popup blockers. Designed especially for popups with audio/visual media.
