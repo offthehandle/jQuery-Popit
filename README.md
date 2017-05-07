@@ -70,7 +70,7 @@ $(document).ready(function () {
 A custom default width is set to 320px, but a dynamic width on the link is set to 640px that will override the default setting. The height will be 285px according to the plugin defaults. Any other link with the class `.safe-popup` will open at 320px, assuming no override is set on it.
 
 ### Media Processing
-Let's assume you have multiple pages opening in the same popup window. Naming a target, i.e. `target="playlists"` will allow you to open multiple pages in the window named `playlists`. Opening a window using the target `playlists` is how the window name is created. Now let's assume that the playlists window uses hash or query strings on the url to cue media in one or more playlists. Once the window is open, loading a url with a new hash or query string will not trigger a reload to process the updated value, so Popit provides this functionality for you.
+Let's assume you have multiple pages opening in the same popup window. Naming a target, i.e. `target="playlists"` will allow you to open multiple pages in the window named `playlists`. Opening a window using the target `playlists` is how the window name is created. Now let's assume that the playlists window uses hash or query strings on the url to cue media in one or more playlists. Once the window is open, loading a url with a new hash or query string will not trigger a reload to process the updated value so Popit conveniently provides this functionality for you.
 
 #### Process Params
 The `processParams` option is an opt-in boolean value set to `true` when you want to reload a named window with updated url parameters.
